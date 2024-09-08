@@ -1,10 +1,13 @@
 FROM python:3.12.3
- 
-COPY analytics/ /app
-WORKDIR /app
 
 RUN apt update -y && apt install -y build-essential libpq-dev
 RUN pip install --upgrade pip setuptools wheel
+
+WORKDIR /usr/src/app
+
+COPY analytics .
+
+RUN pip install -r requirements.txt
 RUN pip install -r requirements.txt
 
 ENV DB_USERNAME=nhanntt55
