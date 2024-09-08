@@ -1,4 +1,4 @@
-FROM python:3.10-slim-buster
+FROM --platform=linux/amd64 public.ecr.aws/docker/library/python:3.10-slim-buster
  
 COPY analytics/ /app
 WORKDIR /app
