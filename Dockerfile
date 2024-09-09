@@ -1,4 +1,4 @@
-FROM python:3.12.3
+FROM python:3.11-slim
 
 RUN apt update -y && apt install -y build-essential libpq-dev
 RUN pip install --upgrade pip setuptools wheel
